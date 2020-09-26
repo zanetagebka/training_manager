@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'bootstrap4',
     'training_manager_app',
     'allauth',
     'allauth.account',
@@ -132,7 +133,8 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 2
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -145,3 +147,9 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+# log out user after set time
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 300
+SESSION_SAVE_EVERY_REQUEST = True
