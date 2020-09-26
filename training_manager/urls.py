@@ -22,4 +22,5 @@ urlpatterns = [
          TemplateView.as_view(template_name="training_manager_app/index.html")),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('about', TemplateView.as_view(template_name="training_manager_app/about.html"))
 ]
